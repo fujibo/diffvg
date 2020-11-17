@@ -22,7 +22,7 @@ def render(canvas_width, canvas_height, shapes, shape_groups):
 
 
 def main(args):
-    pydiffvg.set_device(th.device('cuda:1'))
+    pydiffvg.set_use_gpu(th.cuda.is_available())
 
     # Load SVG
     svg = os.path.join(args.svg)
